@@ -10,41 +10,80 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .form-container {
+        max-width: 700px;
+        margin: 50px auto;
+        background-color: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      hr {
+        border-top: 2px solid #007bff;
+        width: 50%;
+        margin: 20px auto;
+      }
+      label {
+        font-weight: 600;
+      }
+    </style>
   </head>
   <body>
-    <div class="container">
-      <h1>Add An Employee!</h1>
+    <div class="container form-container">
+      <h1 class="text-primary">Add An Employee!</h1>
       <hr />
       <form action="/add_emp" method="post">
         {% csrf_token %}
-        <label for="first_name">First Name</label><br />
-        <input type="text" id="first_name" name="first_name" value="{{first_name}}" /><br />
-        <label for="last_name">Last Name</label><br />
-        <input type="text" id="last_name" name="last_name" value="{{last_name}}" /><br />
-        <label for="salary">Salary</label><br />
-        <input type="number" id="salary" name="salary" value="{{salary}}" /><br />
-        <label for="dept">Department</label><br />
-        <input type="number" id="dept" name="dept"  value="{{dept}}" /><br />
-        <label for="role">Role</label><br />
-        <input type="number" id="role" name="role" value="{{role}}" /><br />
-        <label for="bonus">Bonus</label><br />
-        <input type="number" id="bonus" name="bonus" value="{{bonus}}" /><br />
-        <label for="phone">Phone</label><br />
-        <input type="number" id="phone" name="phone" value="{{phone}}" /><br />
         
+        <div class="form-group">
+          <label for="first_name">First Name</label>
+          <input type="text" class="form-control" id="first_name" name="first_name" value="{{first_name}}" />
+        </div>
 
+        <div class="form-group">
+          <label for="last_name">Last Name</label>
+          <input type="text" class="form-control" id="last_name" name="last_name" value="{{last_name}}" />
+        </div>
 
+        <div class="form-group">
+          <label for="salary">Salary</label>
+          <input type="number" class="form-control" id="salary" name="salary" value="{{salary}}" />
+        </div>
 
+        <div class="form-group">
+          <label for="dept">Department</label>
+          <input type="number" class="form-control" id="dept" name="dept" value="{{dept}}" />
+        </div>
 
+        <div class="form-group">
+          <label for="role">Role</label>
+          <input type="number" class="form-control" id="role" name="role" value="{{role}}" />
+        </div>
 
+        <div class="form-group">
+          <label for="bonus">Bonus</label>
+          <input type="number" class="form-control" id="bonus" name="bonus" value="{{bonus}}" />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="number" class="form-control" id="phone" name="phone" value="{{phone}}" />
+        </div>
 
         <hr />
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary btn-block">Submit</button>
       </form>
     </div>
 
     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

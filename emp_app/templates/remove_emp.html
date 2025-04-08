@@ -10,14 +10,40 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .remove-container {
+        max-width: 600px;
+        margin: 70px auto;
+        padding: 40px;
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        text-align: center;
+        color: #dc3545;
+        margin-bottom: 30px;
+      }
+      .dropdown-toggle {
+        width: 100%;
+        font-size: 18px;
+        padding: 12px;
+      }
+      .dropdown-menu {
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
-    <div class="container">
+    <div class="container remove-container">
       <h1>Remove An Employee</h1>
       <hr />
       <div class="dropdown">
         <button
-          class="btn btn-primary dropdown-toggle"
+          class="btn btn-danger dropdown-toggle"
           type="button"
           id="dropdownMenuButton"
           data-toggle="dropdown"
@@ -27,18 +53,16 @@
           Choose Employee to be removed
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          
-        {% for emp in emps %}
-
-          <a class="dropdown-item" href="/remove_emp/{{emp.id}}">{{emp.first_name}} {{emp.last_name}}</a>
-
-        {% endfor %}
+          {% for emp in emps %}
+            <a class="dropdown-item text-danger" href="/remove_emp/{{emp.id}}">
+              {{emp.first_name}} {{emp.last_name}}
+            </a>
+          {% endfor %}
         </div>
       </div>
     </div>
 
     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
